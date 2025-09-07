@@ -1,0 +1,27 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# production build
+/dist
+/build
+
+# env files (important for security!)
+.env
+.env.local
+.env.*.local
+
+# misc
+.DS_Store
+Thumbs.db
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# editor / system
+.vscode/
+.idea/
+*.swp
