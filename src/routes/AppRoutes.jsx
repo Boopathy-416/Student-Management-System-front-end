@@ -2,14 +2,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 
 // Intro
-// import IntroIndex from "../pages/Intro/index";
-// import Slide1 from "../pages/Intro/Slide1";
-// import Slide2 from "../pages/Intro/Slide2";
-// import Slide3 from "../pages/Intro/Slide3";
-
 
 import IntroWrapper from "../pages/Intro/IntroWrapper";
-
 
 // Role selection
 import RoleSelection from "../pages/RoleSelection/RoleSelection";
@@ -20,10 +14,16 @@ import TeacherSignUp from "../pages/Auth/Teacher/TeacherSignUp";
 import AdminSignIn from "../pages/Auth/Admin/AdminSignIn";
 
 // Dashboards
-import TeacherDashboard from "../pages/Dashboard/Teacher/TeacherDashboard";
-import AdminDashboard from "../pages/Dashboard/Admin/AdminDashboard";
+// import TeacherDashboard from "../pages/Teacher/TeacherDashboard";
+import TeacherLayout from "../layouts/TeacherLayout";
+import DashboardHome from "../pages/Teacher/DashboardHome";
+import Classes from "../pages/Teacher/Classes";
+import Students from "../pages/Teacher/Students";
+import Profile from "../pages/Teacher/Profile";
 
 import NotFound from "../pages/NotFound";
+import AdminLayout from "../layouts/AdminLayout";
+import ImportExport from "../pages/Admin/ImportExport"
 
 export default function AppRoutes() {
   return (
@@ -31,9 +31,6 @@ export default function AppRoutes() {
       {/* Intro redirects */}
       <Route path="/" element={<Navigate to="/intro" replace />} />
       <Route path="/intro" element={<IntroWrapper />} />
-      {/* <Route path="/intro/1" element={<Slide1 />} />
-      <Route path="/intro/2" element={<Slide2 />} />
-      <Route path="/intro/3" element={<Slide3 />} /> */}
 
       {/* Choose role */}
       <Route path="/choose-role" element={<RoleSelection />} />
@@ -44,12 +41,24 @@ export default function AppRoutes() {
       <Route path="/auth/admin/signin" element={<AdminSignIn />} />
 
       {/* Protected dashboards */}
+
       <Route element={<PrivateRoute allowedRoles={["teacher"]} />}>
-        <Route path="/dashboard/teacher" element={<TeacherDashboard />} />
+        <Route path="/dashboard/teacher" element={<TeacherLayout />}>
+          <Route index element={<DashboardHome />} />
+          <Route path="classes" element={<Classes />} />
+          <Route path="students" element={<Students />} />
+          <Route path="profile" element={<Profile />} />
+          {/* <Route path="settings" element={<Settings />} /> */}
+        </Route>
       </Route>
 
       <Route element={<PrivateRoute allowedRoles={["admin"]} />}>
-        <Route path="/dashboard/admin" element={<AdminDashboard />} />
+        <Route path="/dashboard/admin" element={<AdminLayout />}>
+          <Route index element={<h2>Admin Home</h2>} />
+          <Route path="import-export" element={<ImportExport />} />
+          <Route path="reports" element={<h2>Reports</h2>} />
+          <Route path="settings" element={<h2>Settings</h2>} />
+        </Route>
       </Route>
 
       {/* 404 */}

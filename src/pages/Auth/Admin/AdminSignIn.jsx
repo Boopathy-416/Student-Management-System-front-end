@@ -205,7 +205,7 @@ export default function AdminSignIn() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-3 py-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your email"
+                  placeholder="Admin@gmail.com"
                   required
                 />
               </div>
@@ -225,7 +225,7 @@ export default function AdminSignIn() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-10 pr-10 py-3 bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="Enter your password"
+                  placeholder="@Admin123"
                   required
                 />
                 <button

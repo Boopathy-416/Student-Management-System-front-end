@@ -20,7 +20,7 @@ export default function TeacherSignIn() {
 
     try {
       const res = await teacherLogin(data);
-      login("teacher", res.data.token); // ✅ Make sure backend sends { token: "..." }
+      login("teacher", res.data.token,  res.data.user); // ✅ Make sure backend sends { token: "..." }
       navigate(from, { replace: true });
     } catch (err) {
       alert(err.response?.data?.message || "Login failed");

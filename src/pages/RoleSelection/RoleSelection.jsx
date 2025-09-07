@@ -26,7 +26,7 @@ export default function RoleSelection() {
             "url('https://res.cloudinary.com/dpm3bum4n/image/upload/v1746289278/fin1_3_febk7z.png')",
         }}
       ></div>
-      <div className="flex-1 ring-black/50 backdrop-blur-sm rounded-2xl ring-1   md:m-20 flex flex-col items-center justify-center">
+      <div className="flex-1 ring-black/50 backdrop-blur-sm rounded-2xl md:ring-1   md:m-20 flex flex-col items-center justify-center">
         <h1 className="text-2xl font-bold text-center mb-3">Choose Your <mark>Role</mark></h1>
         <p className="text-sm text-center text-gray-600 mb-10 max-w-[300px]">
           Select your role to access the appropriate features and permissions
