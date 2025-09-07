@@ -67,7 +67,7 @@ export default function IntroWrapper() {
         </div>
         <PaginationDots  total={slides.length} current={step} />
 
-        <div className="flex justify-end ">
+        <div className="flex justify-end py-3 ">
           {step < slides.length - 1 ? (
             <button
               onClick={handleNext}
