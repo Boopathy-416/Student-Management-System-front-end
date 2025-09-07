@@ -166,16 +166,16 @@ export default function TeacherSignIn() {
             </div>
           </div>
 
-          <div className="w-full border-stroke dark:border-strokedark xl:w-1/2 xl:border-l-2">
+          <div className="w-full border-stroke xl:w-1/2 xl:border-l-2">
             <div className="w-full p-4 sm:p-12.5 xl:p-17.5">
-              <span className="mb-1.5 block font-medium">Start for free</span>
-              <h2 className="mb-9 text-2xl font-bold text-black dark:text-white sm:text-title-xl2">
+              <span className="mb-1.5 block font-medium text-sm text-gray/40 ">Start for free</span>
+              <h2 className="mb-9 md:text-4xl text-3xl font-bold text-black tracking-tighter text-center sm:text-title-xl2">
                 Sign In to Student Management System
               </h2>
 
               <form onSubmit={handleSignIn}>
                 <div className="mb-4">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-2.5 block tracking-tighter font-medium text-black ">
                     Email
                   </label>
                   <div className="relative">
@@ -183,7 +183,7 @@ export default function TeacherSignIn() {
                     name="email"
                     required
                       placeholder="Enter your email"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border tracking-wider border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
@@ -207,16 +207,17 @@ export default function TeacherSignIn() {
                 </div>
 
                 <div className="mb-6">
-                  <label className="mb-2.5 block font-medium text-black dark:text-white">
+                  <label className="mb-2.5 tracking-tighter block font-medium text-black ">
                     Re-type Password
                   </label>
                   <div className="relative">
                     <input
                       name="password"
                       type="password"
+                    
                       required
                       placeholder="6+ Characters, 1 Capital letter"
-                      className="w-full rounded-lg border border-stroke bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
+                      className="w-full rounded-lg border border-stroke tracking-wider bg-transparent py-4 pl-6 pr-10 outline-none focus:border-primary focus-visible:shadow-none dark:border-form-strokedark dark:bg-form-input dark:focus:border-primary"
                     />
 
                     <span className="absolute right-4 top-4">
