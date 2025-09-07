@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { LogOut, Settings, Users, BarChart, Menu, X, FileSpreadsheet } from "lucide-react";
+import { LogOut, Settings, Users, BarChart, Menu, X, FileSpreadsheet, FileEdit } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
 export default function AdminLayout() {
@@ -20,8 +20,8 @@ const { logout } = useAuth();
           <Link to="/dashboard/admin/import-export" className="flex items-center gap-2 p-2 rounded hover:bg-blue-100">
              <FileSpreadsheet size={18} /> Excel Import / Export
           </Link>
-          <Link to="/dashboard/admin/reports" className="flex items-center gap-2 p-2 rounded hover:bg-blue-100">
-            <BarChart size={18} /> Reports
+          <Link to="/dashboard/admin/edit-students" className="flex items-center gap-2 p-2 rounded hover:bg-blue-100">
+            <FileEdit size={18} /> File Edit
           </Link>
           <Link to="/dashboard/admin/settings" className="flex items-center gap-2 p-2 rounded hover:bg-blue-100">
             <Settings size={18} /> Settings

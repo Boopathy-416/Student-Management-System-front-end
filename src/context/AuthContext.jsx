@@ -44,11 +44,13 @@
 
 
 
-
-
 // src/context/AuthContext.jsx
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { getAuth as getStoredAuth, setAuth as saveAuth, clearAuth as removeAuth } from "../services/auth";
+import {
+  getAuth as getStoredAuth,
+  setAuth as saveAuth,
+  clearAuth as removeAuth,
+} from "../services/auth";
 
 const AuthContext = createContext();
 
@@ -57,40 +59,47 @@ export function AuthProvider({ children }) {
   const [initializing, setInitializing] = useState(true);
 
   useEffect(() => {
-    // read from localStorage once on mount
+    // ✅ Load user/token from localStorage once
     const existing = getStoredAuth();
-    if (existing) setUser(existing);
+    if (existing?.token) {
+      setUser(existing);
+    }
     setInitializing(false);
   }, []);
 
   const login = (role, token, userData) => {
     const u = { role, token, user: userData };
     setUser(u);
-    saveAuth(u);
+    saveAuth(u); // persist to localStorage
   };
 
   const logout = () => {
     if (window.confirm("Are you sure you want to logout?")) {
       setUser(null);
-      removeAuth();
-      window.location.href = "/choose-role";
+      removeAuth(); // clear localStorage
+      window.location.href = "/choose-role"; // redirect
     }
   };
 
   const value = useMemo(
     () => ({
       user,
+      token: user?.token ?? null,        // ✅ expose token directly
       isAuthenticated: !!user?.token,
       role: user?.role ?? null,
       name: user?.user?.name ?? null,
       login,
       logout,
-      initializing, // expose it
+      initializing,
     }),
     [user, initializing]
   );
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthContext.Provider value={value}>
+      {!initializing && children}
+    </AuthContext.Provider>
+  );
 }
 
 export const useAuth = () => useContext(AuthContext);

@@ -24,6 +24,7 @@ import Profile from "../pages/Teacher/Profile";
 import NotFound from "../pages/NotFound";
 import AdminLayout from "../layouts/AdminLayout";
 import ImportExport from "../pages/Admin/ImportExport"
+import EditStudents from "../pages/Admin/Edit-Students";
 
 export default function AppRoutes() {
   return (
@@ -56,7 +57,7 @@ export default function AppRoutes() {
         <Route path="/dashboard/admin" element={<AdminLayout />}>
           <Route index element={<h2>Admin Home</h2>} />
           <Route path="import-export" element={<ImportExport />} />
-          <Route path="reports" element={<h2>Reports</h2>} />
+          <Route path="edit-students" element={<EditStudents />} />
           <Route path="settings" element={<h2>Settings</h2>} />
         </Route>
       </Route>
