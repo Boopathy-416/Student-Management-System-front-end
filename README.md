@@ -1,12 +1,23 @@
-# React + Vite
+Frontend Separation (Role-Based UI)
+Admin Dashboard:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Has access to:
 
-Currently, two official plugins are available:
+Student List (with Edit/Delete buttons).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add Student form.
 
-## Expanding the ESLint configuration
+Import/Export page.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Teacher Dashboard:
+
+Has access to:
+
+View-only Student List (no edit/delete buttons).
+
+Analytics Dashboard (charts).
+
+<img width="1899" height="910" alt="Screenshot 2025-09-08 002832" src="https://github.com/user-attachments/assets/7e79317c-4886-4710-bbc3-057a571b2560" />
+<img width="1909" height="905" alt="Screenshot 2025-09-08 003303" src="https://github.com/user-attachments/assets/13ef6617-0f1c-40be-807a-e1fb8200225b" />
+<img width="1905" height="906" alt="Screenshot 2025-09-08 003320" src="https://github.com/user-attachments/assets/d61ee2bd-04b8-4863-b360-5f0723437092" />
+<img width="1899" height="901" alt="Screenshot 2025-09-08 003332" src="https://github.com/user-attachments/assets/846e5b0e-bb18-4f8a-b3d7-484b5fac407e" />
