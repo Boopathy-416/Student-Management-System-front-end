@@ -16,15 +16,17 @@ import AdminSignIn from "../pages/Auth/Admin/AdminSignIn";
 // Dashboards
 // import TeacherDashboard from "../pages/Teacher/TeacherDashboard";
 import TeacherLayout from "../layouts/TeacherLayout";
-import DashboardHome from "../pages/Teacher/DashboardHome";
+
 import Classes from "../pages/Teacher/Classes";
 import Students from "../pages/Teacher/Students";
-import Profile from "../pages/Teacher/Profile";
+
 
 import NotFound from "../pages/NotFound";
 import AdminLayout from "../layouts/AdminLayout";
 import ImportExport from "../pages/Admin/ImportExport"
 import EditStudents from "../pages/Admin/Edit-Students";
+import AuditLogs from "../pages/Teacher/AuditLogs";
+import DashboardHome from "../pages/Teacher/DashboardHome";
 
 export default function AppRoutes() {
   return (
@@ -48,7 +50,7 @@ export default function AppRoutes() {
           <Route index element={<DashboardHome />} />
           <Route path="classes" element={<Classes />} />
           <Route path="students" element={<Students />} />
-          <Route path="profile" element={<Profile />} />
+          <Route path="profile" element={<AuditLogs />} />
           {/* <Route path="settings" element={<Settings />} /> */}
         </Route>
       </Route>

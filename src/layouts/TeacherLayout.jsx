@@ -45,8 +45,8 @@ export default function TeacherLayout() {
             <Users size={18} /> Students
           </Link>
 
-          <Link to="/dashboard/teacher/profile" className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
-            <User size={18} /> Profile
+          <Link to="/dashboard/teacher/AuditLogs" className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
+            <User size={18} /> AuditLogs
           </Link>
 
           <Link to="/dashboard/teacher/settings" className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
@@ -91,8 +91,8 @@ export default function TeacherLayout() {
           <Link to="/dashboard/teacher/students" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
             <Users size={18} /> Students
           </Link>
-          <Link to="/dashboard/teacher/profile" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
-            <User size={18} /> Profile
+          <Link to="/dashboard/teacher/AuditLogs" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
+            <User size={18} /> AuditLogs
           </Link>
           <Link to="/dashboard/teacher/settings" onClick={() => setSidebarOpen(false)} className="flex items-center gap-3 p-2 rounded hover:bg-indigo-50">
             <Settings size={18} /> Settings
